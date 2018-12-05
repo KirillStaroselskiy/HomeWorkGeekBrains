@@ -21,7 +21,7 @@ class PhotoCollectionViewController: UICollectionViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Register cell classes
-        self.collectionView!.register(PhotoCollectionCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+      //  self.collectionView!.register(PhotoCollectionCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
         // Do any additional setup after loading the view.
     }
@@ -38,29 +38,18 @@ class PhotoCollectionViewController: UICollectionViewController {
 
     // MARK: UICollectionViewDataSource
 
-//    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-//        // #warning Incomplete implementation, return the number of sections
-//        return 1
-//    }
-
-
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
         return friends?.count ?? 0
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! PhotoCollectionCell
-        // cell.backgroundColor = UIColor.green
-        // cell.image.backgroundColor = UIColor.blue
-        //  cell.photoFriend.backgroundColor = UIColor.blue
-//        if let friend = friends?[indexPath.row] {
-//            let imageName = friend.image!
-//           //cell.photo.image = UIImage(named: "camera_200")
-        //   cell.photo.image = UIImage(named: "camera_200")
-      //  cell.photo.image = UIImage(named: "camera_200.png")
-//        }
-//        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! PhotoCollectionViewCell
+
+        if let imageName = friends?[indexPath.row].image {
+           cell.photoFriend.image = UIImage(named: imageName)
+       }
+
         return cell
     }
 
