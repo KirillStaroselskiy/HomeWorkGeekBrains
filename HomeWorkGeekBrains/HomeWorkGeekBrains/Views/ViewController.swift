@@ -72,29 +72,29 @@ class ViewController: UIViewController {
         self.scrollView?.endEditing(true)
     }
     
-    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        
-        let login = loginTF.text
-        let password = passwordTF.text
-        
-        if login == "admin" && password == "123456" {
-            return true
-            
-        } else {
-            
-            // Создаем контроллер
-            let alter = UIAlertController(title: "Ошибка", message: "Введены неверные данные пользователя", preferredStyle: .alert)
-            // Создаем кнопку для UIAlertController
-            let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-            // Добавляем кнопку на UIAlertController
-            alter.addAction(action)
-            // Показываем UIAlertController
-            present(alter, animated: true, completion: nil)
-
-            return false
-            
-        }
-    }
+//    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+//
+//        let login = loginTF.text
+//        let password = passwordTF.text
+//
+//        if login == "admin" && password == "123456" {
+//            return true
+//
+//        } else {
+//            
+//            // Создаем контроллер
+//            let alter = UIAlertController(title: "Ошибка", message: "Введены неверные данные пользователя", preferredStyle: .alert)
+//            // Создаем кнопку для UIAlertController
+//            let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+//            // Добавляем кнопку на UIAlertController
+//            alter.addAction(action)
+//            // Показываем UIAlertController
+//            present(alter, animated: true, completion: nil)
+//
+//            return false
+//
+//        }
+//    }
 
 
 }

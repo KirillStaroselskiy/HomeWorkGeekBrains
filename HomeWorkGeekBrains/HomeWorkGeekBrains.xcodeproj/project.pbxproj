@@ -7,14 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ED8F7B3921B85167006579A2 /* PhotoCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F7B3821B85167006579A2 /* PhotoCollectionCell.swift */; };
 		EDCA8D8021B7345000548315 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCA8D7F21B7345000548315 /* AppDelegate.swift */; };
 		EDCA8D8221B7345000548315 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCA8D8121B7345000548315 /* ViewController.swift */; };
 		EDCA8D8521B7345000548315 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDCA8D8321B7345000548315 /* Main.storyboard */; };
 		EDCA8D8721B7345300548315 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDCA8D8621B7345300548315 /* Assets.xcassets */; };
 		EDCA8D8A21B7345300548315 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDCA8D8821B7345300548315 /* LaunchScreen.storyboard */; };
+		EDCA8D9321B81FB700548315 /* FriendsListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCA8D9221B81FB700548315 /* FriendsListTableViewController.swift */; };
+		EDCA8D9621B81FF900548315 /* FriendsListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCA8D9521B81FF900548315 /* FriendsListTableViewCell.swift */; };
+		EDCA8D9821B8234600548315 /* PhotoCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCA8D9721B8234600548315 /* PhotoCollectionViewController.swift */; };
+		EDCA8D9A21B8235D00548315 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCA8D9921B8235D00548315 /* PhotoCollectionViewCell.swift */; };
+		EDCA8D9D21B8244E00548315 /* FriendModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCA8D9C21B8244E00548315 /* FriendModal.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		ED8F7B3821B85167006579A2 /* PhotoCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionCell.swift; sourceTree = "<group>"; };
 		EDCA8D7C21B7345000548315 /* HomeWorkGeekBrains.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeWorkGeekBrains.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDCA8D7F21B7345000548315 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EDCA8D8121B7345000548315 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +29,11 @@
 		EDCA8D8621B7345300548315 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EDCA8D8921B7345300548315 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EDCA8D8B21B7345300548315 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EDCA8D9221B81FB700548315 /* FriendsListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsListTableViewController.swift; sourceTree = "<group>"; };
+		EDCA8D9521B81FF900548315 /* FriendsListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsListTableViewCell.swift; sourceTree = "<group>"; };
+		EDCA8D9721B8234600548315 /* PhotoCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewController.swift; sourceTree = "<group>"; };
+		EDCA8D9921B8235D00548315 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		EDCA8D9C21B8244E00548315 /* FriendModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendModal.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,13 +67,43 @@
 			isa = PBXGroup;
 			children = (
 				EDCA8D7F21B7345000548315 /* AppDelegate.swift */,
-				EDCA8D8121B7345000548315 /* ViewController.swift */,
+				EDCA8D9121B81F5A00548315 /* Modal */,
+				EDCA8D9B21B823E500548315 /* Views */,
 				EDCA8D8321B7345000548315 /* Main.storyboard */,
 				EDCA8D8621B7345300548315 /* Assets.xcassets */,
 				EDCA8D8821B7345300548315 /* LaunchScreen.storyboard */,
 				EDCA8D8B21B7345300548315 /* Info.plist */,
 			);
 			path = HomeWorkGeekBrains;
+			sourceTree = "<group>";
+		};
+		EDCA8D9121B81F5A00548315 /* Modal */ = {
+			isa = PBXGroup;
+			children = (
+				EDCA8D9C21B8244E00548315 /* FriendModal.swift */,
+			);
+			path = Modal;
+			sourceTree = "<group>";
+		};
+		EDCA8D9421B81FC100548315 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				EDCA8D9521B81FF900548315 /* FriendsListTableViewCell.swift */,
+				EDCA8D9921B8235D00548315 /* PhotoCollectionViewCell.swift */,
+				ED8F7B3821B85167006579A2 /* PhotoCollectionCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		EDCA8D9B21B823E500548315 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EDCA8D8121B7345000548315 /* ViewController.swift */,
+				EDCA8D9221B81FB700548315 /* FriendsListTableViewController.swift */,
+				EDCA8D9721B8234600548315 /* PhotoCollectionViewController.swift */,
+				EDCA8D9421B81FC100548315 /* Cell */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,8 +177,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDCA8D9821B8234600548315 /* PhotoCollectionViewController.swift in Sources */,
+				EDCA8D9321B81FB700548315 /* FriendsListTableViewController.swift in Sources */,
+				ED8F7B3921B85167006579A2 /* PhotoCollectionCell.swift in Sources */,
 				EDCA8D8221B7345000548315 /* ViewController.swift in Sources */,
 				EDCA8D8021B7345000548315 /* AppDelegate.swift in Sources */,
+				EDCA8D9621B81FF900548315 /* FriendsListTableViewCell.swift in Sources */,
+				EDCA8D9A21B8235D00548315 /* PhotoCollectionViewCell.swift in Sources */,
+				EDCA8D9D21B8244E00548315 /* FriendModal.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
