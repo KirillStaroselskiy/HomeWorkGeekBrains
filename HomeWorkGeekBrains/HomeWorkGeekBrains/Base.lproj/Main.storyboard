@@ -76,10 +76,11 @@
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
                                         <state key="normal" title="Вход"/>
                                         <connections>
-                                            <segue destination="pMt-3s-GI8" kind="show" id="tfe-wK-eDW"/>
+                                            <segue destination="pMt-3s-GI8" kind="show" id="HzH-d0-lmb"/>
                                         </connections>
                                     </button>
                                 </subviews>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstItem="XTI-zM-aNr" firstAttribute="top" secondItem="HKi-dS-KMY" secondAttribute="bottom" id="1hb-Pz-kyS"/>
                                     <constraint firstItem="XTI-zM-aNr" firstAttribute="height" secondItem="f0Y-XX-4VN" secondAttribute="height" id="4dZ-6C-v0f"/>
@@ -127,6 +128,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="loginTF" destination="plN-cX-UGY" id="HLl-P0-o1B"/>
+                        <outlet property="passwordTF" destination="O4u-Bu-5EO" id="tud-Gq-Lxf"/>
+                        <outlet property="scrollView" destination="f0Y-XX-4VN" id="nlI-nk-qYN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
