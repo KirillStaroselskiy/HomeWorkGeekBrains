@@ -41,23 +41,30 @@ class MyGroupsTableViewController: UITableViewController {
             
             let allGroupsController = segue.source as! AllGroupsTableViewController
             
-            if let indexPath = self.tableView.indexPathForSelectedRow {
-                
-                let group = allGroupsController.allGroups?[indexPath.row]
+            guard let indexPath = allGroupsController.tableView.indexPathForSelectedRow  else{ return }
+            guard let group = allGroupsController.allGroups?[indexPath.row] else { return }
             
-                myGroups?.append(group!)
-                
+            //var groups: [GroupModal]?
+            if myGroups != nil {
+                if !(myGroups?.contains(where: {$0.name == group.name}))! {
+                    myGroups?.append(group)
+                }
+            } else {
+                myGroups = [group]
             }
+            tableView.reloadData()
         }
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "myGroups", for: indexPath) as! MyGroupsTableViewCell
 
-        let group = myGroups?[indexPath.row]
+        if let group = myGroups?[indexPath.row] {
         
-        cell.icon.image = UIImage(named: (group?.icon)!)
-        cell.name.text = group?.name
+            cell.icon.image = UIImage(named: (group.icon)!)
+            cell.name.text = group.name
+            
+        }
         return cell
     }
     
@@ -75,6 +82,7 @@ class MyGroupsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
+            myGroups?.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view

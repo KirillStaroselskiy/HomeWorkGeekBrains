@@ -103,8 +103,6 @@ class FriendsListTableViewController: UITableViewController {
             guard let indexPath  =  self.tableView.indexPathForSelectedRow else { return }
             guard let friend = friends?[indexPath.row] else { return }
             friendsInfo.append(friend)
-            print(friend.name)
-            print(friendsInfo)
             friendsFromPhotoCollection?.friends = friendsInfo
             
             

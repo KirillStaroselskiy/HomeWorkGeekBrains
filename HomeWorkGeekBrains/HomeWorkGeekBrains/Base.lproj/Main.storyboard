@@ -245,26 +245,25 @@
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="myGroups" rowHeight="50" id="yiL-JH-1uX" customClass="MyGroupsTableViewCell" customModule="HomeWorkGeekBrains" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yiL-JH-1uX" id="6z9-4M-vYw">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yiL-JH-1uX" id="6z9-4M-vYw">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="49.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bC6-4L-EwT">
-                                            <rect key="frame" x="10" y="0.0" width="50" height="50"/>
+                                            <rect key="frame" x="10" y="0.0" width="50" height="50.5"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="50" id="ND4-RU-TJI"/>
                                                 <constraint firstAttribute="width" constant="50" id="ytS-YM-1rE"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hr6-Kp-9uf">
-                                            <rect key="frame" x="70" y="14" width="42" height="21"/>
+                                            <rect key="frame" x="70" y="14.5" width="42" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="Hr6-Kp-9uf" firstAttribute="centerY" secondItem="6z9-4M-vYw" secondAttribute="centerY" id="3dZ-JJ-4tq"/>
                                         <constraint firstItem="Hr6-Kp-9uf" firstAttribute="top" secondItem="6z9-4M-vYw" secondAttribute="topMargin" constant="3" id="Blo-Jw-wxC"/>
                                         <constraint firstItem="bC6-4L-EwT" firstAttribute="top" secondItem="6z9-4M-vYw" secondAttribute="top" id="E4m-0P-mPv"/>
                                         <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="Hr6-Kp-9uf" secondAttribute="trailing" constant="10" id="E8e-zV-WjO"/>
@@ -287,7 +286,7 @@
                     <navigationItem key="navigationItem" id="NB2-Dd-B5o">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="lFn-Wx-u4N">
                             <connections>
-                                <segue destination="392-zo-RPg" kind="show" id="2G9-O8-mHR"/>
+                                <segue destination="392-zo-RPg" kind="show" identifier="" id="2G9-O8-mHR"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -305,7 +304,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="50" id="fJ5-A1-dUL" customClass="AllGroupsTableViewCell" customModule="HomeWorkGeekBrains" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="allGroupsID" rowHeight="50" id="fJ5-A1-dUL" customClass="AllGroupsTableViewCell" customModule="HomeWorkGeekBrains" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fJ5-A1-dUL" id="b3V-on-fBg">
@@ -339,7 +338,7 @@
                                 <connections>
                                     <outlet property="icon" destination="dYL-3L-kaO" id="Wll-Vn-LkS"/>
                                     <outlet property="name" destination="PtR-Fo-L0z" id="Bbe-dz-iqn"/>
-                                    <segue destination="d69-cA-4aC" kind="unwind" unwindAction="addGroupWithSegue:" id="ipW-hS-7sV"/>
+                                    <segue destination="d69-cA-4aC" kind="unwind" identifier="addGroup" unwindAction="addGroupWithSegue:" id="t9H-qf-ZnJ"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
