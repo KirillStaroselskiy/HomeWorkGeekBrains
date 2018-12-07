@@ -12,6 +12,9 @@ class AllGroupsTableViewController: UITableViewController {
 
     
     var allGroups: [GroupModal]?
+    var filteredGroups: [GroupModal]?
+    let searchController = UISearchController(searchResultsController: nil)
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +34,12 @@ class AllGroupsTableViewController: UITableViewController {
                       GroupModal(name: "You Yube", icon: "geekbrains"),
                       GroupModal(name: "Radio Record", icon: "habrhabr")]
         
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Введите группу"
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
+        
     }
 
     // MARK: - Table view data source
@@ -41,7 +50,11 @@ class AllGroupsTableViewController: UITableViewController {
 //    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
+        
+        if isFiltering() {
+            return filteredGroups?.count ?? 0
+        }
+        
         return allGroups?.count ?? 0
     }
 
@@ -49,17 +62,27 @@ class AllGroupsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "allGroupsID", for: indexPath) as! AllGroupsTableViewCell
 
-        if let group = allGroups?[indexPath.row] {
+        var group: GroupModal?
         
-            cell.name.text = group.name
-            cell.icon.image = UIImage(named: group.icon!)
+        if isFiltering() {
+            group = filteredGroups?[indexPath.row]
+            
+        } else {
+            group = allGroups?[indexPath.row]
+            
         }
+        
+        cell.name.text = group?.name
+        cell.icon.image = UIImage(named: (group?.icon)!)
         
         return cell
     }
     
     
- 
+    func isFiltering() -> Bool {
+        return searchController.isActive && !searchBarIsEmpty()
+    }
+
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -104,5 +127,29 @@ class AllGroupsTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+
+}
+
+extension AllGroupsTableViewController: UISearchResultsUpdating {
+    // MARK: - UISearchResultsUpdating Delegate
+    func updateSearchResults(for searchController: UISearchController) {
+        filterContentForSearchText(searchController.searchBar.text!)
+
+    }
+    
+    // MARK: - Private instance methods
+    
+    func searchBarIsEmpty() -> Bool {
+        // Returns true if the text is empty or nil
+        return searchController.searchBar.text?.isEmpty ?? true
+    }
+    
+    func filterContentForSearchText(_ searchText: String, scope: String = "All") {
+        filteredGroups = allGroups?.filter({( group : GroupModal) -> Bool in
+            return (group.name?.lowercased().contains(searchText.lowercased()))!
+        })
+        
+        tableView.reloadData()
+    }
 
 }
