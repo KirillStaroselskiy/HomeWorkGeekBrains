@@ -245,25 +245,26 @@
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="myGroups" rowHeight="50" id="yiL-JH-1uX" customClass="MyGroupsTableViewCell" customModule="HomeWorkGeekBrains" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yiL-JH-1uX" id="6z9-4M-vYw">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yiL-JH-1uX" id="6z9-4M-vYw">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="49.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bC6-4L-EwT">
-                                            <rect key="frame" x="10" y="0.0" width="50" height="50.5"/>
+                                            <rect key="frame" x="10" y="0.0" width="50" height="50"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="50" id="ND4-RU-TJI"/>
                                                 <constraint firstAttribute="width" constant="50" id="ytS-YM-1rE"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hr6-Kp-9uf">
-                                            <rect key="frame" x="70" y="14.5" width="42" height="21"/>
+                                            <rect key="frame" x="70" y="14" width="42" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="Hr6-Kp-9uf" firstAttribute="centerY" secondItem="6z9-4M-vYw" secondAttribute="centerY" id="3dZ-JJ-4tq"/>
                                         <constraint firstItem="Hr6-Kp-9uf" firstAttribute="top" secondItem="6z9-4M-vYw" secondAttribute="topMargin" constant="3" id="Blo-Jw-wxC"/>
                                         <constraint firstItem="bC6-4L-EwT" firstAttribute="top" secondItem="6z9-4M-vYw" secondAttribute="top" id="E4m-0P-mPv"/>
                                         <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="Hr6-Kp-9uf" secondAttribute="trailing" constant="10" id="E8e-zV-WjO"/>
