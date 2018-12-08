@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ED65721621BA871100ED94A3 /* ImageViewSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED65721521BA871100ED94A3 /* ImageViewSettings.swift */; };
+		ED65721C21BC360E00ED94A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED65721B21BC360E00ED94A3 /* Assets.xcassets */; };
+		ED65721E21BC5D4800ED94A3 /* ButtonSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED65721D21BC5D4800ED94A3 /* ButtonSettings.swift */; };
 		ED8F7B3921B85167006579A2 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F7B3821B85167006579A2 /* PhotoCollectionViewCell.swift */; };
 		ED8F7B3D21B87BD5006579A2 /* GroupModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F7B3C21B87BD5006579A2 /* GroupModal.swift */; };
 		ED8F7B3F21B87E23006579A2 /* MyGroupsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F7B3E21B87E23006579A2 /* MyGroupsTableViewController.swift */; };
@@ -16,7 +19,6 @@
 		EDCA8D8021B7345000548315 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCA8D7F21B7345000548315 /* AppDelegate.swift */; };
 		EDCA8D8221B7345000548315 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCA8D8121B7345000548315 /* ViewController.swift */; };
 		EDCA8D8521B7345000548315 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDCA8D8321B7345000548315 /* Main.storyboard */; };
-		EDCA8D8721B7345300548315 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDCA8D8621B7345300548315 /* Assets.xcassets */; };
 		EDCA8D8A21B7345300548315 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDCA8D8821B7345300548315 /* LaunchScreen.storyboard */; };
 		EDCA8D9321B81FB700548315 /* FriendsListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCA8D9221B81FB700548315 /* FriendsListTableViewController.swift */; };
 		EDCA8D9621B81FF900548315 /* FriendsListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCA8D9521B81FF900548315 /* FriendsListTableViewCell.swift */; };
@@ -25,6 +27,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		ED65721521BA871100ED94A3 /* ImageViewSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewSettings.swift; sourceTree = "<group>"; };
+		ED65721B21BC360E00ED94A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		ED65721D21BC5D4800ED94A3 /* ButtonSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonSettings.swift; sourceTree = "<group>"; };
 		ED8F7B3821B85167006579A2 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		ED8F7B3C21B87BD5006579A2 /* GroupModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupModal.swift; sourceTree = "<group>"; };
 		ED8F7B3E21B87E23006579A2 /* MyGroupsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGroupsTableViewController.swift; sourceTree = "<group>"; };
@@ -35,7 +40,6 @@
 		EDCA8D7F21B7345000548315 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EDCA8D8121B7345000548315 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		EDCA8D8421B7345000548315 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		EDCA8D8621B7345300548315 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EDCA8D8921B7345300548315 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EDCA8D8B21B7345300548315 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EDCA8D9221B81FB700548315 /* FriendsListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsListTableViewController.swift; sourceTree = "<group>"; };
@@ -55,6 +59,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		ED65721F21BC7CA400ED94A3 /* UIsettings */ = {
+			isa = PBXGroup;
+			children = (
+				ED65721D21BC5D4800ED94A3 /* ButtonSettings.swift */,
+				ED65721521BA871100ED94A3 /* ImageViewSettings.swift */,
+			);
+			path = UIsettings;
+			sourceTree = "<group>";
+		};
 		EDCA8D7321B7345000548315 = {
 			isa = PBXGroup;
 			children = (
@@ -75,11 +88,12 @@
 			isa = PBXGroup;
 			children = (
 				EDCA8D7F21B7345000548315 /* AppDelegate.swift */,
+				ED65721F21BC7CA400ED94A3 /* UIsettings */,
 				EDCA8D9121B81F5A00548315 /* Modal */,
 				EDCA8D9B21B823E500548315 /* Views */,
 				EDCA8D8321B7345000548315 /* Main.storyboard */,
-				EDCA8D8621B7345300548315 /* Assets.xcassets */,
 				EDCA8D8821B7345300548315 /* LaunchScreen.storyboard */,
+				ED65721B21BC360E00ED94A3 /* Assets.xcassets */,
 				EDCA8D8B21B7345300548315 /* Info.plist */,
 			);
 			path = HomeWorkGeekBrains;
@@ -177,7 +191,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EDCA8D8A21B7345300548315 /* LaunchScreen.storyboard in Resources */,
-				EDCA8D8721B7345300548315 /* Assets.xcassets in Resources */,
+				ED65721C21BC360E00ED94A3 /* Assets.xcassets in Resources */,
 				EDCA8D8521B7345000548315 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -190,8 +204,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED8F7B4321B87E7C006579A2 /* MyGroupsTableViewCell.swift in Sources */,
+				ED65721621BA871100ED94A3 /* ImageViewSettings.swift in Sources */,
 				EDCA8D9821B8234600548315 /* PhotoCollectionViewController.swift in Sources */,
 				ED8F7B3F21B87E23006579A2 /* MyGroupsTableViewController.swift in Sources */,
+				ED65721E21BC5D4800ED94A3 /* ButtonSettings.swift in Sources */,
 				EDCA8D9321B81FB700548315 /* FriendsListTableViewController.swift in Sources */,
 				ED8F7B3921B85167006579A2 /* PhotoCollectionViewCell.swift in Sources */,
 				EDCA8D8221B7345000548315 /* ViewController.swift in Sources */,

@@ -13,6 +13,8 @@ private let reuseIdentifier = "photoCell"
 class PhotoCollectionViewController: UICollectionViewController {
 
     var friends: [FriendModal]?
+    var likes: Int = 0
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,7 +52,15 @@ class PhotoCollectionViewController: UICollectionViewController {
            cell.photoFriend.image = UIImage(named: imageName)
        }
 
+        
+        
         return cell
+    }
+    
+    
+    func likesCounter(){
+        
+        likes += 1
     }
 
     // MARK: UICollectionViewDelegate

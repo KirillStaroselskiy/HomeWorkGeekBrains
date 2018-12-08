@@ -154,28 +154,46 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="49.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0yf-ov-cgA">
-                                            <rect key="frame" x="10" y="0.0" width="50" height="50"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="50" id="1LQ-DW-zSA"/>
-                                                <constraint firstAttribute="width" constant="50" id="juN-i9-wWC"/>
-                                            </constraints>
-                                        </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="STJ-dB-LGM">
-                                            <rect key="frame" x="70" y="12" width="42" height="20.5"/>
+                                            <rect key="frame" x="70" y="12" width="279" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0yf-ov-cgA" customClass="ImageViewSettings" customModule="HomeWorkGeekBrains" customModuleProvider="target">
+                                            <rect key="frame" x="10" y="0.0" width="50" height="50"/>
+                                            <color key="backgroundColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="50" id="Ikt-0M-EGY"/>
+                                                <constraint firstAttribute="width" constant="50" id="kZl-Bt-Y7q"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <real key="value" value="25"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                    <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                    <real key="value" value="3"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                                    <size key="value" width="3" height="2"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                    <real key="value" value="0.5"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </imageView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="bottom" secondItem="STJ-dB-LGM" secondAttribute="bottom" constant="12" id="7L8-co-aYP"/>
-                                        <constraint firstItem="0yf-ov-cgA" firstAttribute="leading" secondItem="iBU-ns-YfQ" secondAttribute="leading" constant="10" id="MGB-43-sP2"/>
-                                        <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="STJ-dB-LGM" secondAttribute="trailing" constant="10" id="Pt6-s0-4IZ"/>
+                                        <constraint firstAttribute="bottom" secondItem="0yf-ov-cgA" secondAttribute="bottom" id="PoR-sX-Xua"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="STJ-dB-LGM" secondAttribute="trailing" constant="10" id="Pt6-s0-4IZ"/>
                                         <constraint firstItem="STJ-dB-LGM" firstAttribute="top" secondItem="iBU-ns-YfQ" secondAttribute="top" constant="12" id="Q0S-Py-iu4"/>
-                                        <constraint firstAttribute="bottom" secondItem="0yf-ov-cgA" secondAttribute="bottom" id="fYh-mt-tBD"/>
-                                        <constraint firstItem="STJ-dB-LGM" firstAttribute="leading" secondItem="0yf-ov-cgA" secondAttribute="trailing" constant="10" id="kr1-kV-9YI"/>
-                                        <constraint firstItem="0yf-ov-cgA" firstAttribute="top" secondItem="iBU-ns-YfQ" secondAttribute="top" id="tnX-Ue-8HA"/>
+                                        <constraint firstItem="0yf-ov-cgA" firstAttribute="top" secondItem="iBU-ns-YfQ" secondAttribute="top" id="RoG-1g-60d"/>
+                                        <constraint firstItem="STJ-dB-LGM" firstAttribute="leading" secondItem="0yf-ov-cgA" secondAttribute="trailing" constant="10" id="Yk9-rK-NhX"/>
+                                        <constraint firstItem="0yf-ov-cgA" firstAttribute="leading" secondItem="iBU-ns-YfQ" secondAttribute="leading" constant="10" id="kBr-VL-lwf"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -383,31 +401,58 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="y0v-4m-ktY">
-                            <size key="itemSize" width="335" height="277"/>
+                            <size key="itemSize" width="335" height="307"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="photoCell" id="hJ2-Qq-gYh" customClass="PhotoCollectionViewCell" customModule="HomeWorkGeekBrains" customModuleProvider="target">
-                                <rect key="frame" x="20" y="0.0" width="335" height="277"/>
+                                <rect key="frame" x="20" y="0.0" width="335" height="307"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                    <rect key="frame" x="0.0" y="0.0" width="335" height="277"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="335" height="307"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pGp-Sr-Qbm">
-                                            <rect key="frame" x="0.0" y="0.0" width="335" height="277"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="335" height="276.5"/>
                                         </imageView>
+                                        <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cnY-vg-PWq" customClass="ButtonSettings" customModule="HomeWorkGeekBrains" customModuleProvider="target">
+                                            <rect key="frame" x="15" y="276.5" width="46" height="30.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="46" id="dsQ-1S-MIs"/>
+                                            </constraints>
+                                            <color key="tintColor" red="0.29102289679999999" green="0.46338927749999997" blue="0.65848273040000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="13" maxY="0.0"/>
+                                            <state key="normal" image="heart"/>
+                                        </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0ddd" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hcm-Jx-81X">
+                                            <rect key="frame" x="50" y="276.5" width="11" height="30.5"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                            <color key="textColor" red="0.4230426549911499" green="0.54725795984268188" blue="0.6596987247467041" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="highlightedColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </label>
                                     </subviews>
                                 </view>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="pGp-Sr-Qbm" firstAttribute="centerX" secondItem="hJ2-Qq-gYh" secondAttribute="centerX" id="285-co-z6x"/>
-                                    <constraint firstItem="pGp-Sr-Qbm" firstAttribute="centerY" secondItem="hJ2-Qq-gYh" secondAttribute="centerY" id="6BQ-Gp-Vvk"/>
-                                    <constraint firstItem="pGp-Sr-Qbm" firstAttribute="height" secondItem="hJ2-Qq-gYh" secondAttribute="height" id="Q1E-29-Ygt"/>
+                                    <constraint firstAttribute="trailing" secondItem="pGp-Sr-Qbm" secondAttribute="trailing" id="3I1-D7-Sas"/>
+                                    <constraint firstItem="pGp-Sr-Qbm" firstAttribute="leading" secondItem="hJ2-Qq-gYh" secondAttribute="leading" id="5qv-1K-jxD"/>
+                                    <constraint firstAttribute="bottom" secondItem="cnY-vg-PWq" secondAttribute="bottom" id="9Nq-rv-6tm"/>
+                                    <constraint firstItem="cnY-vg-PWq" firstAttribute="top" secondItem="pGp-Sr-Qbm" secondAttribute="bottom" id="LAG-hJ-I5t"/>
+                                    <constraint firstItem="pGp-Sr-Qbm" firstAttribute="height" secondItem="hJ2-Qq-gYh" secondAttribute="height" multiplier="0.9" id="Q1E-29-Ygt"/>
+                                    <constraint firstItem="cnY-vg-PWq" firstAttribute="centerY" secondItem="Hcm-Jx-81X" secondAttribute="centerY" id="U0z-1O-Nj5"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Hcm-Jx-81X" secondAttribute="trailing" constant="274" id="UoI-qN-HDs"/>
+                                    <constraint firstItem="pGp-Sr-Qbm" firstAttribute="top" secondItem="hJ2-Qq-gYh" secondAttribute="top" id="Zbq-ff-Xwb"/>
+                                    <constraint firstItem="cnY-vg-PWq" firstAttribute="leading" secondItem="hJ2-Qq-gYh" secondAttribute="leading" constant="15" id="aW4-Xg-eMe"/>
+                                    <constraint firstItem="Hcm-Jx-81X" firstAttribute="top" secondItem="pGp-Sr-Qbm" secondAttribute="bottom" id="edg-y5-Opd"/>
                                     <constraint firstItem="pGp-Sr-Qbm" firstAttribute="width" secondItem="hJ2-Qq-gYh" secondAttribute="width" id="hDH-WV-xY0"/>
+                                    <constraint firstItem="Hcm-Jx-81X" firstAttribute="leading" secondItem="hJ2-Qq-gYh" secondAttribute="leading" constant="50" id="wjl-gW-6uj"/>
+                                    <constraint firstItem="cnY-vg-PWq" firstAttribute="trailing" secondItem="Hcm-Jx-81X" secondAttribute="trailing" id="yhN-tR-Fnj"/>
                                 </constraints>
                                 <connections>
+                                    <outlet property="likesButton" destination="cnY-vg-PWq" id="907-DB-ub9"/>
                                     <outlet property="photoFriend" destination="pGp-Sr-Qbm" id="gpG-rp-I2y"/>
                                 </connections>
                             </collectionViewCell>
@@ -423,4 +468,7 @@
             <point key="canvasLocation" x="3552.8000000000002" y="-215.44227886056973"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="heart" width="180" height="180"/>
+    </resources>
 </document>
