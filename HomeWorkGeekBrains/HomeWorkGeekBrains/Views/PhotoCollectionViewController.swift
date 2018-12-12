@@ -12,10 +12,9 @@ private let reuseIdentifier = "photoCell"
 
 class PhotoCollectionViewController: UICollectionViewController {
 
-    var friends: [FriendModal]?
-    var likes: Int = 0
-    
-    
+    var friends: [UserModal]?
+    var isOn = false
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -42,27 +41,53 @@ class PhotoCollectionViewController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return friends?.count ?? 0
+        return friends?.first?.photos?.count ?? 0
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! PhotoCollectionViewCell
 
-        if let imageName = friends?[indexPath.row].image {
-           cell.photoFriend.image = UIImage(named: imageName)
-       }
-
-        
+        if let friend = friends?.first{
+            if let photo = friend.photos?[indexPath.row] {
+                cell.photoFriend.image = UIImage(named: photo.photoName!)
+                cell.likesLabel.text = String(photo.likesCount!)
+                
+            }
+        }
+        cell.likesButton.addTarget(self, action: #selector(buttonPressed(_:)), for: .touchUpInside)
         
         return cell
     }
     
-    
-    func likesCounter(){
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        likes += 1
+    }
+    
+
+    @objc func buttonPressed(_ sender: UIButton) {
+        guard  let indexPath = collectionView?.indexPath(for: ((sender.superview?.superview) as! PhotoCollectionViewCell)) else { return }
+        
+        activateButton(bool: !isOn, indexPath: indexPath)
     }
 
+  
+    func activateButton(bool: Bool, indexPath: IndexPath) {
+        self.isOn = bool
+        if let photo = friends?.first?.photos?[indexPath.row]{
+
+                if !bool {
+                    photo.likesCount -= 1
+                } else {
+                    photo.likesCount += 1
+                }
+            
+            collectionView.reloadData()
+
+            }
+    }
+    
+
+    
     // MARK: UICollectionViewDelegate
 
     /*

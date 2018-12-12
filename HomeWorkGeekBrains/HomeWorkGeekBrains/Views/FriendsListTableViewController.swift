@@ -8,50 +8,83 @@
 
 import UIKit
 
+struct Section {
+    let letter : String
+    let friends : [UserModal]
+}
+
 class FriendsListTableViewController: UITableViewController {
 
-    var friends: [FriendModal]?
+    var friends: [UserModal]?
+    var sections = [Section]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        friends = [FriendModal(name: "Vaso", image: "camera_200"),
-                   FriendModal(name: "Georg", image: "camera_200"),
-                   FriendModal(name: "Misha", image: "camera_200"),
-                   FriendModal(name: "Marina", image: "camera_200"),
-                   FriendModal(name: "Anna", image: "camera_200")]
+        friends = [
+            UserModal(name: "Vaso", image: "camera_200", photos: [PhotoModal(photoName: "habrhabr", likesCount: 20), PhotoModal(photoName: "camera_200", likesCount: 203)]),
+            UserModal(name: "Georg", image: "camera_200", photos: [PhotoModal(photoName: "habrhabr", likesCount: 100)]),
+            UserModal(name: "Misha", image: "camera_200", photos: [PhotoModal(photoName: "habrhabr", likesCount: 330)]),
+            UserModal(name: "Han", image: "camera_200", photos: [PhotoModal(photoName: "habrhabr", likesCount: 4)]),
+            UserModal(name: "Anna", image: "camera_200", photos: [PhotoModal(photoName: "habrhabr", likesCount: 50)]),
+            UserModal(name: "Dima", image: "camera_200", photos: [PhotoModal(photoName: "habrhabr", likesCount: 20), PhotoModal(photoName: "camera_200", likesCount: 203)]),
+            UserModal(name: "Roma", image: "camera_200", photos: [PhotoModal(photoName: "habrhabr", likesCount: 100)]),
+            UserModal(name: "Nata", image: "camera_200", photos: [PhotoModal(photoName: "habrhabr", likesCount: 330)]),
+            UserModal(name: "Tata", image: "camera_200", photos: [PhotoModal(photoName: "habrhabr", likesCount: 4)]),
+            UserModal(name: "Inna", image: "camera_200", photos: [PhotoModal(photoName: "habrhabr", likesCount: 50)]),
+            UserModal(name: "Kirill", image: "camera_200", photos: [PhotoModal(photoName: "habrhabr", likesCount: 20), PhotoModal(photoName: "camera_200", likesCount: 203)]),
+            UserModal(name: "Qwerty", image: "camera_200", photos: [PhotoModal(photoName: "habrhabr", likesCount: 100)]),
+            UserModal(name: "Boris", image: "camera_200", photos: [PhotoModal(photoName: "habrhabr", likesCount: 330)]),
+            UserModal(name: "Zoom", image: "camera_200", photos: [PhotoModal(photoName: "habrhabr", likesCount: 4)]),
+            UserModal(name: "Lesha", image: "camera_200", photos: [PhotoModal(photoName: "habrhabr", likesCount: 50)])]
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    
+        var groupedDictionary = Dictionary(grouping: friends!, by:{$0.name.prefix(1)})
+        let keys = groupedDictionary.keys.sorted()
+        sections = keys.map{ Section(letter: String($0), friends: groupedDictionary[$0]!) }
+        print(sections)
+
+        
     }
 
     // MARK: - Table view data source
 
-//    override func numberOfSections(in tableView: UITableView) -> Int {
-//        // #warning Incomplete implementation, return the number of sections
-//        return 0
-//    }
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
+        return sections.count
+    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return friends?.count ?? 0
+        return sections[section].friends.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "friendCell", for: indexPath) as! FriendsListTableViewCell
-        if let friend = friends?[indexPath.row]{
+        let section = sections[indexPath.section]
+        let friend = section.friends[indexPath.row]
         
         cell.name.text = friend.name
         cell.avatar.image = UIImage(named: friend.image)
             
-        }
+        
         return cell
     }
     
-
+    override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
+        return sections.map{$0.letter}
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        
+        //let newItems =
+        return sections[section].letter
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -97,7 +130,7 @@ class FriendsListTableViewController: UITableViewController {
         
         if segue.identifier == "friendSegue"{
             
-            var friendsInfo = [FriendModal]()
+            var friendsInfo = [UserModal]()
             let friendsFromPhotoCollection = segue.destination as? PhotoCollectionViewController
             
             guard let indexPath  =  self.tableView.indexPathForSelectedRow else { return }

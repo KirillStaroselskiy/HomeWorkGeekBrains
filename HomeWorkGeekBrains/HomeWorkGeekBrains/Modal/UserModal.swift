@@ -9,14 +9,16 @@
 import UIKit
 
 
-class FriendModal {
+class UserModal {
     
     var name: String!
     var image: String!
+    var photos: [PhotoModal]?
     
-    init(name: String, image: String) {
+    init(name: String, image: String, photos: [PhotoModal]) {
         self.name = name
         self.image = image
+        self.photos = photos
     }
     
     
