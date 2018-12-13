@@ -42,13 +42,7 @@ class FriendsListTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
-    
-        var groupedDictionary = Dictionary(grouping: friends!, by:{$0.name.prefix(1)})
-        let keys = groupedDictionary.keys.sorted()
-        sections = keys.map{ Section(letter: String($0), friends: groupedDictionary[$0]!) }
-        print(sections)
-
-        
+        gruppedFriends()
     }
 
     // MARK: - Table view data source
@@ -77,6 +71,7 @@ class FriendsListTableViewController: UITableViewController {
     }
     
     override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
+
         return sections.map{$0.letter}
     }
     
@@ -84,6 +79,15 @@ class FriendsListTableViewController: UITableViewController {
         
         //let newItems =
         return sections[section].letter
+    }
+    
+    func gruppedFriends(){
+        
+        var groupedDictionary = Dictionary(grouping: friends!, by:{$0.name.prefix(1)})
+        let keys = groupedDictionary.keys.sorted()
+        sections = keys.map{ Section(letter: String($0), friends: groupedDictionary[$0]!) }
+        print(sections)
+        
     }
     /*
     // Override to support conditional editing of the table view.
